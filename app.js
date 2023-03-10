@@ -6,6 +6,7 @@ const heading = React.createElement(
   {
     className: "greeting",
     id: "title",
+    key: "title",
     style: {
       color: "red",
     },
@@ -17,24 +18,38 @@ const heading2 = React.createElement(
   {
     className: "greeting",
     id: "title2",
-    style: {
-      color: "red",
-    },
+    key: "title2",
   },
   "Hello h2"
 );
+const heading3 = (
+  <h3 key="title3" className="greeting">
+    Hello3
+  </h3>
+);
+
 const div = React.createElement(
   "div",
   {
     className: "container",
     id: "titleDiv",
   },
-  [heading, heading2]
+  [heading, heading2, heading3]
 );
+const Headercomponent = () => {
+  return (
+    <div>
+      {div}
+      <h4 key="title4" className="greeting">
+        Hello4
+      </h4>
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(div);
+root.render(<Headercomponent />);
 
 // obj = {
 //   fn1: function () {
