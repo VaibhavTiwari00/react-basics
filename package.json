@@ -1,0 +1,38 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "this app is for learn basics of parcel and react",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/VaibhavTiwari00/react-basics.git"
+  },
+  "keywords": [
+    "react",
+    "parcel",
+    "package.json",
+    "lock.pacakage.json",
+    "tilde/caret",
+    "node_modules",
+    "dependencies",
+    "reactDOM"
+  ],
+  "author": "Vaibhav Tiwari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VaibhavTiwari00/react-basics/issues"
+  },
+  "homepage": "https://github.com/VaibhavTiwari00/react-basics#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
