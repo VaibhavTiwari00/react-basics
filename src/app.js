@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import BodyLayout from "./components/body";
-import Header from "./components/header";
-import Footer from "./components/footer";
-
+import BodyLayout from "./components/Body";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Shimmer from "./components/Shimmer.js";
 
 const AppLayout = () => {
   return (

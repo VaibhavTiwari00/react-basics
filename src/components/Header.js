@@ -1,17 +1,22 @@
+import React, { useState } from "react";
+import Logoimg from "../assets/img/logo.png";
+
 const Logo = () => {
   return (
     <div className="logo">
       <a href="/">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyCRlyximj5yhVIizSe3AgP7gRlll0fo-v_g&usqp=CAU"
-          alt="logo"
-        />
+        <img src={Logoimg} alt="logo" />
       </a>
     </div>
   );
 };
 
 const Header = () => {
+  const [isloggedin, setIsloggedin] = useState(false);
+
+  const loginbtnClick = () => {
+    isloggedin ? setIsloggedin(false) : setIsloggedin(true);
+  };
   return (
     <header>
       <Logo />
@@ -21,6 +26,9 @@ const Header = () => {
           <li>About</li>
           <li>Contact</li>
           <li>Cart</li>
+          <button onClick={loginbtnClick}>
+            {isloggedin ? "Login" : "Logout"}
+          </button>
         </ul>
       </div>
     </header>
