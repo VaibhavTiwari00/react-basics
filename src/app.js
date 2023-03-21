@@ -3,13 +3,17 @@ import ReactDOM from "react-dom/client";
 import BodyLayout from "./components/Body";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Shimmer from "./components/Shimmer.js";
+import About from "./components/About.js";
+import Contact from "./components/Contact";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 const AppLayout = () => {
   return (
     <>
       <Header />
-      <BodyLayout />
+      <Outlet />
       <Footer />
     </>
   );
@@ -17,7 +21,33 @@ const AppLayout = () => {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<AppLayout />);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <BodyLayout />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantMenu />,
+      },
+    ],
+  },
+]);
+
+root.render(<RouterProvider router={router} />);
 
 // obj = {
 //   fn1: function () {

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Logoimg from "../assets/img/logo.png";
+import About from "./About";
+import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
@@ -22,9 +24,12 @@ const Header = () => {
       <Logo />
       <div className="navbar">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <Link to="/">Home</Link>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+
+          <Link to="/contact">Contact</Link>
           <li>Cart</li>
           <button onClick={loginbtnClick}>
             {isloggedin ? "Login" : "Logout"}
