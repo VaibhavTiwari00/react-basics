@@ -49,14 +49,3 @@ const router = createBrowserRouter([
 
 root.render(<RouterProvider router={router} />);
 
-// obj = {
-//   fn1: function () {
-//     console.log(this.title);
-//   },
-//   fn2: () => {
-//     console.log(this.title);
-//   },
-//   title: "vaibhav",
-// };
-// obj.fn1();
-// obj.fn2();
