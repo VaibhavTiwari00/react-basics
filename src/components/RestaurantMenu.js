@@ -25,9 +25,7 @@ const RestaurantMenu = () => {
       json?.data?.cards[2].groupedCard.cardGroupMap.REGULAR.cards
     );
   }
-
-
-
+  console.log(resRecommendedMenu);
   return Object.values(resMenu).length == 0 ? (
     <Shimmer />
   ) : (
@@ -46,7 +44,7 @@ const RestaurantMenu = () => {
       <address>Address:{resMenu?.locality + " " + resMenu?.areaName}</address>
       <p>Rating : {resMenu?.avgRating}</p>
       <h3>Recommended Post</h3>
-     
+      <ul></ul>
     </>
   );
 };
