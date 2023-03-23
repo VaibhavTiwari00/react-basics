@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 const BodyLayout = () => {
   const [searchText, setSearchText] = useState("");
-
   const [allrestaurant, setAllrestaurant] = useState([]);
   const [filteredrestaurant, setFilteredrestaurant] = useState([]);
 
