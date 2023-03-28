@@ -3,7 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import React, { useState, useEffect } from "react";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
-
+import { filterData } from "../utils/fun.util";
 const BodyLayout = () => {
   const [searchText, setSearchText] = useState("");
   const [allrestaurant, setAllrestaurant] = useState([]);
@@ -22,13 +22,6 @@ const BodyLayout = () => {
     setFilteredrestaurant(json.data.cards[2].data.data.cards);
   }
   console.log("render");
-
-  function filterData(searchText, allrestaurant) {
-    const filteredData = allrestaurant.filter((restaurant) =>
-      restaurant.data.name.toLowerCase().includes(searchText)
-    );
-    return filteredData;
-  }
 
   return allrestaurant.length === 0 ? (
     <Shimmer />
