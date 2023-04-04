@@ -13,7 +13,9 @@ const ProfileFun = (props) => {
       console.log("use effect return");
       clearInterval(timer);
     };
-  });
+  }, []); 
+
+
   return (
     <div>
       <h5>Profile Function based component </h5>

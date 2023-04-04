@@ -28,8 +28,8 @@ class About extends React.Component {
           }}
         >
           {/* <Profileclass count={this.state.count1} content={"first"} /> */}
-          {/* <Profileclass count={this.state.count2} content={"2nd"} /> */}
-          <ProfileFun count={1} />
+          <Profileclass count={this.state.count2} content={"2nd"} />
+          {/* <ProfileFun count={1} /> */}
         </div>
       </>
     );
