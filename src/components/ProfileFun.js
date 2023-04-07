@@ -13,8 +13,7 @@ const ProfileFun = (props) => {
       console.log("use effect return");
       clearInterval(timer);
     };
-  }, []); 
-
+  }, []);
 
   return (
     <div>

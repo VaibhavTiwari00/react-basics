@@ -1,16 +1,21 @@
-import ContactChild from "./contactChild";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import ChildContact from "./ChildContact";
+import Crud from "./Crud.js";
+import Chatgpt from "./Chatgpt.js";
 
-console.log("Parent cons");
 const Contact = () => {
   const [check, setCheck] = useState(1);
 
   console.log("Parent render");
 
+  useEffect(() => {
+    console.log("Hello Parent");
+  });
+
   return (
     <>
       <h1>Contact Us</h1>
-      <button
+      {/* <button
         onClick={() => {
           setCheck(check + 1);
         }}
@@ -18,8 +23,11 @@ const Contact = () => {
         {check}
       </button>
       <div>
-        <ContactChild first={check} />
-      </div>
+        <ChildContact first={check} />
+      </div> */}
+
+      <Crud />
+      {/* <Chatgpt /> */}
     </>
   );
 };

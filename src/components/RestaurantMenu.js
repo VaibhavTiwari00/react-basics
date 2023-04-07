@@ -12,6 +12,8 @@ const RestaurantMenu = () => {
   }, []);
 
   console.log(Object.values(resMenu).length);
+
+  
   async function getRestaurantInfo() {
     data = await fetch(
       "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.449923&lng=80.3318736&restaurantId=" +
@@ -41,9 +43,11 @@ const RestaurantMenu = () => {
         alt=""
       />
       <br></br>
-      <address>Address:{resMenu?.locality + " " + resMenu?.areaName}</address>
+        <address>Address:{resMenu?.locality + " " + resMenu?.areaName}</address>
+        
       <p>Rating : {resMenu?.avgRating}</p>
-      <h3>Recommended Post</h3>
+        <h3>Recommended Post</h3>
+        
       <ul></ul>
     </>
   );
