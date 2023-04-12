@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Logoimg from "../../assets/img/logo.png";
 import About from "./About";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import UserContext from "../utils/UserContext";
 
 const Logo = () => {
   return (
@@ -14,8 +17,14 @@ const Logo = () => {
 };
 
 const Header = () => {
-  const [isloggedin, setIsloggedin] = useState(false);
+  const { user } = useContext(UserContext);
 
+  const [isloggedin, setIsloggedin] = useState(false);
+  // subscribe the store
+  const cartItems = useSelector((store) => store.cart.items);
+
+  console.log(cartItems);
+  
   const loginbtnClick = () => {
     isloggedin ? setIsloggedin(false) : setIsloggedin(true);
   };
@@ -30,10 +39,18 @@ const Header = () => {
           </li>
 
           <Link to="/contact">Contact</Link>
-          <li>Cart</li>
+          <li>
+            <Link to="/instamart">Instamart</Link>
+          </li>
+          <li>
+            <Link to="/cart">Cart -- {cartItems.length}</Link>
+          </li>
           <button onClick={loginbtnClick}>
             {isloggedin ? "Login" : "Logout"}
           </button>
+          <li>
+            <p>{user.name}</p>
+          </li>
         </ul>
       </div>
     </header>

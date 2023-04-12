@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ChildContact from "./ChildContact";
 import Crud from "./Crud.js";
 import Chatgpt from "./Chatgpt.js";
+import FormCard from "./FormCard.js";
 
 const Contact = () => {
   const [check, setCheck] = useState(1);
@@ -26,8 +27,10 @@ const Contact = () => {
         <ChildContact first={check} />
       </div> */}
 
-      <Crud />
+      {/* <Crud /> */}
       {/* <Chatgpt /> */}
+
+      {/* <FormCard /> */}
     </>
   );
 };

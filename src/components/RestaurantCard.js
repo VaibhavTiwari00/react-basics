@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import UserContext from "../utils/UserContext";
+
 const RestaurantCard = ({ cloudinaryImageId, name, cuisines }) => {
+  const { user } = useContext(UserContext);
   return (
     <div className="card">
       <img
@@ -10,7 +14,8 @@ const RestaurantCard = ({ cloudinaryImageId, name, cuisines }) => {
       />
       <div className="container">
         <h4>{name}</h4>
-        <p>{cuisines.join(",")}</p>
+        <p style={{ wordWrap: "break-word" }}>{cuisines.join(",")}</p>
+        <p>{user.name}</p>
       </div>
     </div>
   );

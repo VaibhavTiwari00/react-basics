@@ -1,13 +1,16 @@
 import { restaurantList } from "../constant";
 import RestaurantCard from "./RestaurantCard";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/fun.util";
+import UserContext from "../utils/UserContext";
+
 const BodyLayout = () => {
   const [searchText, setSearchText] = useState("");
   const [allrestaurant, setAllrestaurant] = useState([]);
   const [filteredrestaurant, setFilteredrestaurant] = useState([]);
+  const { user, setUser } = useContext(UserContext);
 
   useEffect(() => {
     getRestaurants();
@@ -47,6 +50,20 @@ const BodyLayout = () => {
         >
           Submit
         </button>
+        <input
+          type="text"
+          value={user.name}
+          onChange={(e) => {
+            setUser({ ...user, name: e.target.value });
+          }}
+        />
+        <input
+          type="text"
+          value={user.email}
+          onChange={(e) => {
+            setUser({ ...user, email: e.target.value });
+          }}
+        />
       </div>
       <main>
         {filteredrestaurant.length === 0 ? (
